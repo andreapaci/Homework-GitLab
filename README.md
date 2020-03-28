@@ -1,2 +1,2 @@
-# andrea.paci1998-gmail.com
+# Homework GitLab
 Java project that analyze git log to find "added" in comments
