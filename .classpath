@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry exported="true" kind="lib" path="API/commons-io-2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="API/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
+	<classpathentry exported="true" kind="lib" path="API/slf4j-api-1.7.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="API/slf4j-jdk14-1.7.9.jar"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="API"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

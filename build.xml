@@ -9,12 +9,21 @@
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
     <path id="GitLab_LogAnalisys.classpath">
+        <pathelement location="API/commons-io-2.6.jar"/>
+        <pathelement location="API/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
+        <pathelement location="API/slf4j-api-1.7.9.jar"/>
+        <pathelement location="API/slf4j-jdk14-1.7.9.jar"/>
         <pathelement location="bin"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="API">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -29,6 +38,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
+            <src path="API"/>
             <classpath refid="GitLab_LogAnalisys.classpath"/>
         </javac>
     </target>
@@ -45,5 +55,10 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="Main">
+        <java classname="logic.Main" failonerror="true" fork="yes">
+            <classpath refid="GitLab_LogAnalisys.classpath"/>
+        </java>
     </target>
 </project>
